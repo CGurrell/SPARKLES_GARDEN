@@ -1,0 +1,10 @@
+{
+	"customer": {
+	
+		"firstName": "",
+		"surname": "",
+		"phone": "",
+		"email": "",
+		"password": ""
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"definitions": {
+		"card": {
+			"type": "object",
+			"properties": {
+				"cardOwnerName": {
+					"type": "string"
+				},
+				"cardNumber": {
+					"type": "string"
+				},
+				"expirationDate": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"cardOwnerName",
+				"cardNumber",
+				"expirationDate"
+			]
+		}
+	}
+} 

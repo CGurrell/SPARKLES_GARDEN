@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="templates/default.xhtml">
+    <ui:define name="content">
+        
+        <h2>cards</h2>
+        <h:panelGroup rendered="#{empty cards.cards}">
+            <em>No registered cards.</em>
+        </h:panelGroup>
+        <h:panelGroup rendered="#{not empty cards.cards}">
+            <em>Some registered cards.</em>
+        </h:panelGroup>
+        
+        <form method="POST" action="/api/cardrest/registerCard">
+	        cardOwnerName: <input type="text" name="cardOwnerName"/>
+	        cardNumber: <input type="text" name="cardNumber"/>
+	        expirationDate: <input type="text" name="expirationDate"/>
+	        <input type="submit"/>
+        </form>
+        
+        <h:dataTable var="_card" value="#{cards.cards}"
+            rendered="#{not empty cards}"
+            styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_card.cardID}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{_card.cardOwnerName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">REST URL</f:facet>
+                <a href="#{request.contextPath}/rest/cardrest/#{_card.cardID}">/rest/cards/#{_card.cardID}</a>
+            </h:column>
+            <f:facet name="footer">
+            REST URL for all cards: <a
+                    href="#{request.contextPath}/rest/cardrest">/rest/cards</a>
+            </f:facet>
+            <script src="..\js\allenExample.js" />
+        </h:dataTable>
+    </ui:define>
+</ui:composition>

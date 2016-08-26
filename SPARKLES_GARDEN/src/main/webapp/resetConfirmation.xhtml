@@ -1,0 +1,41 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/noSearchTemplate.xhtml">
+	<ui:define name="mainContent">
+		<meta charset="utf-8" />
+<f:view>
+	<h:body>
+		<div class="container-fluid" id="formdiv">
+			<table style="width: 100%">
+				<tr>
+					<th></th>
+				</tr>
+				<tr>
+					<td>
+						<div class="alert alert-success col-md-5 col-md-offset-4">
+							<strong>Success!</strong> Your password has been successfully
+							reset
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>
+							<h:outputLink value="resetConfirmation.xhtml"
+								class="btn btn-warning" role="button">Reset my password!</h:outputLink>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<p id="contact">
+				<a href="contact.xhtml">Contact</a>
+			</p>
+		</div>
+	</h:body>
+</f:view>
+</ui:define>
+</ui:composition>
